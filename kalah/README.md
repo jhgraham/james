@@ -1,6 +1,6 @@
 
 
-# Backbase Coding Challenge
+# Coding Test for Backbase - December 2019
 
 This project contains an implementation for a game of 6 stone Kalah as per the brief for the Backbase Coding challenge.
 The two RESTful methods have been implemented and tested. The game does not currently go beyond this scope and try to 
@@ -14,7 +14,7 @@ Persistence Layer - uses a H2 in-memory database accessed by JPA.
 Service Layer - implements the Kalah Game rules.
  
 
-##Java Technologies used:
+## Java Technologies used:
 
 Spring Boot
 Spring Web
@@ -40,31 +40,53 @@ mvn package && java -jar target/kalah-rest-service-0.1.0.jar
 
 ## Testing
 
-JUnit tests are provided under src/test/java/kalah
+### JUnit
+JUnit tests are provided under src/test/java/kalah.
 
-Postman scripts
+### Postman
+Postman scripts are provided under postman directory. 
+The Postman Collection contains two requests: 
 
-curl --header "Content-Type: application/json" \
---request POST \
-http://<host>:<port>/games
-Response:
-HTTP code: 201
-Response Body: { "id": "1234", "uri": "http://<host>:<port>/games/1234" }
+   1. A POST Request for creating a new game (CreateNewGame)
+   
+   Example:
+		POST http://localhost:8080/games
+		
+	Response:
+	
+		HTTP 201 Created
+		{
+			"id": "1",
+			"url": "http://localhost:8080/games/1"
+		}
+   
+   2. A PUT Request for making a move in the game (MakeMove)
 
+	Example:
+		PUT http://localhost:8080/games/1/pits/8
 
-curl --header "Content-Type: application/json" \
---request PUT \
-http://<host>:<port>/games/{gameId}/pits/{pitId}
-gameId: unique identifier of a game
-pitId: id of the pit selected to make a move. Pits are numbered from 1 to 14 where 7 and 14 are the kalah (or house)
-of each player
-Response:
-HTTP code: 200
-Response Body:
-{"id":"1234","url":"http://<host>:<port>/games/1234","status":{"1":"4","2":"4","3":"4","4":"4","5":"4","6":"4","7":"0","8":"4","
-9":"4","10":"4","11":"4","12":"4","13":"4","14":"0"}}
-status: json object key-value, where key is the pitId and value is the number of stones in the pit
-
+		HTTP 200 OK
+		
+		{
+			"id": "1",
+			"url": "http://localhost:8080/games/1",
+			"status": {
+				"1": "7",
+				"2": "6",
+				"3": "6",
+				"4": "0",
+				"5": "7",
+				"6": "7",
+				"7": "1",
+				"8": "0",
+				"9": "8",
+				"10": "8",
+				"11": "7",
+				"12": "7",
+				"13": "7",
+				"14": "1"
+			}
+		}
 
 
 James Graham

@@ -31,11 +31,11 @@ The application use a 3 layer architecture using Spring:
 
 * Clone the Repository
 
-git clone https://github.com/jhgraham/james
+	git clone https://github.com/jhgraham/james
 
-To run on the command line
+* To run on the command line
 
-mvn package && java -jar target/kalah-rest-service-0.1.0.jar
+	mvn package && java -jar target/kalah-rest-service-0.1.0.jar
 
 
 ## Testing

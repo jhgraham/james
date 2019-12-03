@@ -28,13 +28,4 @@ public interface KalahService
 	public Integer[]  move(Long gameId, int pitID) throws KalahGameNotFoundException,
 														  KalahInvalidPitIdException,
 														  KalahNotCurrentTurnException;
-	
-	/**
-	 * Retrieve the status of the Kalah Game
-	 * @param gameId - ID of the game
-	 * @return
-	 * @throws KalahGameNotFoundException
-	 */
-	public Map<Integer, Integer> get(Long gameId) throws KalahGameNotFoundException;
-
 }

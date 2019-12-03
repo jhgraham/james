@@ -4,10 +4,23 @@ import kalah.exceptions.KalahException;
 import kalah.exceptions.KalahInvalidPitIdException;
 import kalah.exceptions.KalahNotCurrentTurnException;
 
+/**
+ * This class contains the logic and enforces the rules when a move is made in the Kalah game.
+ * @author James
+ *
+ */
 public class KalahGameEngine
 {
     
-    
+    /**
+     * Make a move in the Kalah game
+     * @param board Board Object
+     * @param startIndex index of the pit from where the move will start
+     * @param currentTurn the player turn (North / South)
+     * @return the next PLayer turn
+     * @throws KalahInvalidPitIdException
+     * @throws KalahNotCurrentTurnException
+     */
     public static Player move(KalahGameBoard board, int startIndex, Player currentTurn) throws KalahInvalidPitIdException, KalahNotCurrentTurnException
     {
         Pit pit = null;

@@ -17,7 +17,11 @@ import kalah.gamelogic.Pit;
 import kalah.gamelogic.Player;
 
 
-
+/**
+ * Represents a saved Game context
+ * @author James
+ *
+ */
 
 @Entity
 public class GameContext implements Serializable
@@ -33,12 +37,7 @@ public class GameContext implements Serializable
     @Id
     @GeneratedValue
     private Long id;
-    
-    /**
-     * Number of Pits per player
-     */
-    private int pitCount;
-    
+      
     
     /**
      * Counts List
@@ -59,8 +58,6 @@ public class GameContext implements Serializable
      */
     public GameContext(int pitCount, int initialSeedCount)
     {
-        this.pitCount = pitCount;
-        
         int length = pitCount * 2 + 2;
         int southStore = pitCount;
         int northStore = 2*pitCount + 1;
@@ -119,97 +116,4 @@ public class GameContext implements Serializable
     {
         this.nextTurn = nextTurn;
     }
-//
-//    public void setStatus(Integer[] counts)
-//    {
-//        this.counts = counts;
-//    }
-//
-//    public int getPitCount()
-//    {
-//        return pitCount;
-//    }
-//
-//    public void setPitCount(int pitCount)
-//    {
-//        this.pitCount = pitCount;
-//    }
-//    
-//    
-//    public boolean isStore(int index)
-//    {
-//        return(index == pitCount || index == 2*pitCount + 1);
-//    }
-//    
-//    public int getStore(Player player)
-//    {
-//        if(player == Player.South)
-//        {
-//            return pitCount + 1;
-//        }
-//        else
-//        {
-//            return 2 * pitCount + 1;
-//        }
-//    }
-//    
-//    public boolean isEmpty(int index)
-//    {
-//        return counts[index] == 0;
-//    }
-//    
-//    public int getOwnStore()
-//    {
-//        return getStore(nextTurn);
-//    }    
-//    
-//    
-//    public Player getOpponent()
-//    {
-//        if(nextTurn == Player.South)
-//        {
-//            return Player.North;
-//        }
-//        else
-//        {
-//            return Player.South;
-//        }      
-//    }
-//    public int getOpponentStore()
-//    {
-//        return getStore(getOpponent());
-//    }
-//    
-//    public int getOppositePit(int index)
-//    {
-//        return ( index + pitCount + 1 ) % counts.length;
-//    }
-//    
-//    /**
-//     * Determine which player should be playing based on the supplied Pit index
-//     * @param index
-//     * @return
-//     * @throws KalahInvalidPitIdException
-//     */
-//    public Player getPlayer(int index) throws KalahInvalidPitIdException
-//    {
-//        if(index < pitCount - 1)
-//        {
-//            return Player.South;
-//        }
-//        else if(index > pitCount && index < 2*pitCount-1)
-//        {
-//            return Player.North;
-//        }
-//        else
-//        {
-//            throw new KalahInvalidPitIdException("Invalid Pit index");             
-//        }
-//    }
-//    
-//    public BoardIterator iterator(int startindex)
-//    {
-//        return new BoardIterator(startindex);
-//    }
-    
 }

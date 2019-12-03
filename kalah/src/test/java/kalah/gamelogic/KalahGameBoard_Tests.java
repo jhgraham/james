@@ -23,40 +23,47 @@ public class KalahGameBoard_Tests
         Integer[] counts = {0,0,0,0,0,0,0,0};
         KalahGameBoard board = new KalahGameBoard(1L, counts);
         
-        Pit pit = board.getPit(0);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.South, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(1);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.South, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(2);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.South, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(3);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.South, pit.getOwner());
-        assertTrue(pit.isStore()); //should be a store
-        
-        pit = board.getPit(4);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.North, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(5);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.North, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(6);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.North, pit.getOwner());
-        assertFalse(pit.isStore());
-        pit = board.getPit(7);
-        assertEquals(0, pit.getCount());
-        assertEquals(Player.North, pit.getOwner());
-        assertTrue(pit.isStore());
-        
+        try
+        {
+            Pit pit = board.getPit(0);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.South, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(1);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.South, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(2);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.South, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(3);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.South, pit.getOwner());
+            assertTrue(pit.isStore()); //should be a store
+            
+            pit = board.getPit(4);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.North, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(5);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.North, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(6);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.North, pit.getOwner());
+            assertFalse(pit.isStore());
+            pit = board.getPit(7);
+            assertEquals(0, pit.getCount());
+            assertEquals(Player.North, pit.getOwner());
+            assertTrue(pit.isStore());   
+        }
+        catch(KalahException ex)
+        {
+            //no exception expected
+            assertTrue(false);
+        }
     }
     
     @Test

@@ -27,6 +27,9 @@ public class KalahServiceImpl implements KalahService
     GameRepository repo;
     
     
+    /**
+     * Brief is for 6 Pits filled with 6 seeds initially.
+     */
     private static final int NUM_PITS = 6;
     private static final int INITIAL_SEED_COUNT = 6;
     
@@ -71,13 +74,5 @@ public class KalahServiceImpl implements KalahService
         repo.save(gameCxt);
         
         return gameCxt.getCounts();
-	}
-
-
-	@Override
-	public Map<Integer, Integer> get(Long gameId)
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

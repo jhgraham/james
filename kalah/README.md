@@ -7,11 +7,11 @@ Two RESTful methods have been implemented and tested for creating a new game and
 
 The application use a 3 layer architecture using Spring:
 
-Web Layer - Implements REST Controller as per the API specification. Converts between internal and external representation.
+* Web Layer - Implements REST Controller as per the API specification. Converts between internal and external representation.
 
-Persistence Layer - uses a H2 in-memory database accessed by JPA.
+* Persistence Layer - uses a H2 in-memory database accessed by JPA.
 
-Service Layer - implements the Kalah Game rules.
+* Service Layer - implements the Kalah Game rules.
  
 
 ## Java Technologies
@@ -49,7 +49,8 @@ The Postman Collection contains two requests:
 
    1. A POST Request for creating a new game (CreateNewGame)
    
-   Example Request:
+		
+	Example Request:
 		POST http://localhost:8080/games
 		
 	Response:

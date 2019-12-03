@@ -23,7 +23,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-
+/**
+ * REST Controller for the Kalah Web Service
+ * @author James
+ *
+ */
 @RestController
 public class KalahController
 {
@@ -31,6 +35,10 @@ public class KalahController
 	@Autowired
 	KalahService service;
 
+	/** 
+	 * Handler for create new games
+	 * @return
+	 */
     @PostMapping("/games")
     public ResponseEntity<Object> create()
     {
@@ -42,11 +50,18 @@ public class KalahController
       return new ResponseEntity<>(new CreateGameResponseBody(newGameId.toString(), gameLocation), HttpStatus.CREATED);
     }
   
+    /**
+     * Handler for making moves in a game.
+     * @param gameId
+     * @param pitId
+     * @return
+     */
   @PutMapping("/games/{gameId}/pits/{pitId}")
   public ResponseEntity<Object> move(@PathVariable Long gameId, @PathVariable Integer pitId)
   {
 	  try
 	  {
+	      //convert to zero based arrays
 	      int pitIndex = --pitId;
 	      
 	      Integer[] pitCounts = service.move(gameId, pitIndex);
@@ -72,7 +87,11 @@ public class KalahController
 	  }  
   }
   
-
+/**
+ * Convert a zero-based Pit array to a Map which uses the Pit ID as a key in order to return the board status to the client
+ * @param pitArray
+ * @return
+ */
   private Map<String, String> createStatusArray(Integer[] pitArray)
   {
       Map<String, String> status = new TreeMap<String, String>(new NumericalOrderStringComparator());

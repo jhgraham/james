@@ -1,8 +1,9 @@
 
 
-Backbase Coding Challenge
+#Backbase Coding Challenge
 
 This project contains an implementation for a game of 6 stone Kalah as per the brief for the Backbase Coding challenge.
+The two RESTful methods have been implemented and tested. The game does not currently go beyond this scope and try to 
 
 The application use a 3 layer architecture using Spring:
 
@@ -13,7 +14,7 @@ Persistence Layer - uses a H2 in-memory database accessed by JPA.
 Service Layer - implements the Kalah Game rules.
  
 
-Java Technologies used:
+##Java Technologies used:
 
 Spring Boot
 Spring Web
@@ -21,21 +22,23 @@ Spring JPA
 H2 Database
 JUnit
 
-Development Tools
+##Development Tools
 Maven
 Eclipse
 
 
-Building and Running the application
+##Building and Running the application
 
 Clone the Repository
 
-git clone http://
+git clone https://github.com/jhgraham/james
 
 To run on the command line
 
 mvn package && java -jar target/kalah-rest-service-0.1.0.jar
 
+
+#Testing
 
 
 curl --header "Content-Type: application/json" \

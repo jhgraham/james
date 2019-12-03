@@ -1,0 +1,70 @@
+{
+	"id": "ca97d529-3201-4c84-a241-4edcd3e5552d",
+	"name": "Kalah",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"d213f49e-7afe-4b14-ad6a-6264c328427b",
+		"385b5847-b312-4b79-abdf-bfc223f70d33"
+	],
+	"folders_order": [],
+	"protocolProfileBehavior": {},
+	"folders": [],
+	"requests": [
+		{
+			"id": "385b5847-b312-4b79-abdf-bfc223f70d33",
+			"name": "MakeMove",
+			"url": "http://localhost:8080/games/1/pits/2",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d213f49e-7afe-4b14-ad6a-6264c328427b",
+			"name": "CreateNewGame",
+			"url": "http://localhost:8080/games",
+			"description": "",
+			"data": [],
+			"dataOptions": null,
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true,
+					"disabled": false
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

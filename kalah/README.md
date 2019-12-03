@@ -1,6 +1,6 @@
 
 
-#Backbase Coding Challenge
+# Backbase Coding Challenge
 
 This project contains an implementation for a game of 6 stone Kalah as per the brief for the Backbase Coding challenge.
 The two RESTful methods have been implemented and tested. The game does not currently go beyond this scope and try to 
@@ -22,12 +22,12 @@ Spring JPA
 H2 Database
 JUnit
 
-##Development Tools
+## Development Tools
 Maven
 Eclipse
 
 
-##Building and Running the application
+## Building and Running the application
 
 Clone the Repository
 
@@ -38,8 +38,11 @@ To run on the command line
 mvn package && java -jar target/kalah-rest-service-0.1.0.jar
 
 
-#Testing
+## Testing
 
+JUnit tests are provided under src/test/java/kalah
+
+Postman scripts
 
 curl --header "Content-Type: application/json" \
 --request POST \

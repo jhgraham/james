@@ -49,7 +49,7 @@ The Postman Collection contains two requests:
 
    1. A POST Request for creating a new game (CreateNewGame)
    
-   Example:
+   Example Request:
 		POST http://localhost:8080/games
 		
 	Response:
@@ -62,9 +62,10 @@ The Postman Collection contains two requests:
    
    2. A PUT Request for making a move in the game (MakeMove)
 
-	Example:
+	Example Request:
 		PUT http://localhost:8080/games/1/pits/8
 
+	Response:
 		HTTP 200 OK
 		
 		{
